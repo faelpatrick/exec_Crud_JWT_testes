@@ -6,10 +6,12 @@ import auth from "./middlewares/auth";
 
 const routes = new Router();
 
+//Open Routes
 routes.post("/sessions", SessionsController.create);
 
-//middleware
+//middleware ceck authentication
 routes.use(auth);
+
 
 //Repositories
 routes.get("/users/:user_id/repositories", RepositoriesController.index);
